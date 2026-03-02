@@ -17,7 +17,7 @@ color:#333;
 scroll-behavior:smooth;
 }
 
-/* HEADER */
+/* HEADER - Desktop */
 header{
 background:white;
 padding:15px 40px;
@@ -49,45 +49,40 @@ font-size:30px;
 color:#cc0066;
 }
 
-/* CENTER NAV */
+/* NAV & SEARCH */
 nav{
-position:absolute;
-left:50%;
-transform:translateX(-50%);
+display:flex;
+align-items:center;
+}
+
+.nav-links{
+display:flex;
+align-items:center;
 }
 
 nav a{
-margin:0 20px;
-text-decoration:none;
+text-decoration:underline;
 color:#cc0066;
 font-weight:600;
+margin:0 15px; 
 }
 
 nav a:hover{
-text-decoration:underline;
+opacity:0.8;
 }
 
-/* SEARCH */
 .search-box{
-display:flex;
-align-items:center;
-gap:8px;
+margin-left:20px; 
 }
 
 .search-box input{
-padding:6px 15px;
-border-radius:20px;
-border:1px solid #ccc;
-}
-
-.search-box button{
-padding:6px 15px;
-border:none;
-border-radius:20px;
-background:linear-gradient(45deg,#ff4d88,#ff99c2);
-color:white;
-font-weight:bold;
-cursor:pointer;
+padding:7px 15px;
+border-radius:25px;
+border:1px solid #ff69b4;
+background:#ffe6f2;
+color:#cc0066;
+width:190px;
+outline:none;
 }
 
 /* HERO */
@@ -156,23 +151,79 @@ color:#ff69b4;
 font-weight:500;
 }
 
-footer{
-text-align:center;
-padding:20px;
-background:#ff4d88;
-color:white;
-margin-top:40px;
+/* FOOTER - Updated */
+footer {
+text-align: center;
+padding: 15px; 
+background: #ff4d88; 
+color: white;
+margin-top: 40px;
+font-size: 12px; 
+opacity: 0.9; 
 }
 
+/* ===== PHONE LAYOUT ===== */
 @media(max-width:768px){
-.grid{grid-template-columns:repeat(2,1fr);}
-.card img{height:180px;}
-nav{
-position:static;
-transform:none;
-margin-top:10px;
-text-align:center;
+
+header{
+flex-direction:column;
+align-items:stretch; 
+padding:15px;
+gap: 15px; 
 }
+
+.logo-area{
+justify-content:flex-start; 
+}
+
+.shop-name{
+font-size:26px; 
+}
+
+nav{
+display:flex;
+flex-direction:row;
+align-items:center;
+justify-content:space-between; 
+width: 100%;
+}
+
+.nav-links{
+gap: 12px; 
+}
+
+nav a{
+font-size:15px; 
+margin:0;
+}
+
+.search-box{
+margin:0;
+}
+
+.search-box input{
+width:135px; 
+padding:6px 12px;
+font-size: 14px; 
+}
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.card img{
+height:160px;
+}
+
+.section{
+padding:40px 15px;
+}
+
+.hero{
+padding:50px 15px;
+}
+
 }
 </style>
 </head>
@@ -187,15 +238,16 @@ text-align:center;
 </div>
 
 <nav>
+<div class="nav-links">
 <a href="#collection">Collection</a>
 <a href="#contact">Contact</a>
 <a href="#about">About</a>
-</nav>
+</div>
 
 <div class="search-box">
 <input type="text" id="searchInput" placeholder="Search...">
-<button onclick="searchItems()">Search</button>
 </div>
+</nav>
 
 </header>
 
@@ -214,48 +266,41 @@ text-align:center;
 <div class="grid" id="jhumkaGrid"></div>
 </section>
 
-
 <section class="section" id="about">
 <h2>About Us</h2>
 <div class="about-box">
 Welcome to our Bangles Store, where elegance meets tradition.  
 We offer premium quality bangles crafted for weddings, festivals, and daily wear.  
 Every design reflects beauty, culture, and modern style.  
-
-Our goal is to provide stylish, affordable, and high-quality bangles that enhance your personality and complete your look.
-
 <br><br>
 <b>Owner:</b> Sanjay Kamti
 </div>
 </section>
+
 <section class="section" id="contact">
 <h2>Contact Info</h2>
 
 <p><b>Owner:</b> <span class="pink">Sanjay Kamti</span></p>
-
 <p><b>📞 Phone:</b> <span class="pink">8240406767</span></p>
-
 <p><b>💬 WhatsApp:</b> 
 <a href="https://wa.me/8240406767" target="_blank" class="pink">
 Chat Now
 </a>
 </p>
-
 <p><b>📸 Instagram:</b> 
 <a href="https://instagram.com/sanajy_kumar_kamti" target="_blank" class="pink">
 @sanajy_kumar_kamti
 </a>
 </p>
-
 <p><b>📧 Email:</b> 
-<a href="mailto:yourgmail@gmail.com" class="pink">
-yourgmail@gmail.com
+<a href="mailto:sanjaykamti@gmail.com" class="pink">
+sanjaykamti@gmail.com
 </a>
 </p>
-
 <p><b>📍 Address:</b> 
 <span class="pink">
-Habibhouar, Pachwari-Tola</span>
+Habibhouar, Pachwari-Tola
+</span>
 </p>
 </section>
 
@@ -318,17 +363,6 @@ let bangles = [
 {name:"Pink Wedding Bangles", img:"b50.webp"},
 ];
 
-let jhumkas = [
-
-];
-
-function shuffleArray(array){
-for(let i=array.length-1;i>0;i--){
-let j=Math.floor(Math.random()*(i+1));
-[array[i],array[j]]=[array[j],array[i]];
-}
-}
-
 function renderProducts(products, containerId){
 let container=document.getElementById(containerId);
 container.innerHTML="";
@@ -342,22 +376,9 @@ container.innerHTML+=`
 });
 }
 
-function searchItems(){
-let input=document.getElementById("searchInput").value.toLowerCase();
-let cards=document.querySelectorAll(".card");
-cards.forEach(card=>{
-card.style.display=card.innerText.toLowerCase().includes(input)?"block":"none";
-});
-}
-
-shuffleArray(bangles);
-shuffleArray(jhumkas);
-
 renderProducts(bangles,"bangleGrid");
-renderProducts(jhumkas,"jhumkaGrid");
 
 </script>
 
 </body>
-
 </html>
