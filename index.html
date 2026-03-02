@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bangles Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+
+body{
+background:#fff6f9;
+color:#333;
+scroll-behavior:smooth;
+}
+
+/* HEADER */
+header{
+background:white;
+padding:15px 40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo-area{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo-img{
+width:65px;
+height:65px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.shop-name{
+font-family:'Great Vibes', cursive;
+font-size:30px;
+color:#cc0066;
+}
+
+/* CENTER NAV */
+nav{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+}
+
+nav a{
+margin:0 20px;
+text-decoration:none;
+color:#cc0066;
+font-weight:600;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+/* SEARCH */
+.search-box{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.search-box input{
+padding:6px 15px;
+border-radius:20px;
+border:1px solid #ccc;
+}
+
+.search-box button{
+padding:6px 15px;
+border:none;
+border-radius:20px;
+background:linear-gradient(45deg,#ff4d88,#ff99c2);
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:80px 20px;
+background:linear-gradient(to right,#ffe0ec,#fff);
+}
+
+.hero h1{
+font-size:38px;
+color:#cc0066;
+}
+
+/* SECTION */
+.section{
+padding:60px 40px;
+}
+
+.section h2{
+margin-bottom:25px;
+color:#cc0066;
+border-left:4px solid #ff66a3;
+padding-left:10px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+/* CARD */
+.card{
+background:white;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+padding:15px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:contain;
+border-radius:10px;
+}
+
+/* ABOUT */
+.about-box{
+background:linear-gradient(135deg,#ffe0ec,#ffd6eb);
+padding:30px;
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+line-height:1.8;
+}
+
+/* CONTACT */
+.pink{
+color:#ff69b4;
+font-weight:500;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#ff4d88;
+color:white;
+margin-top:40px;
+}
+
+@media(max-width:768px){
+.grid{grid-template-columns:repeat(2,1fr);}
+.card img{height:180px;}
+nav{
+position:static;
+transform:none;
+margin-top:10px;
+text-align:center;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo-area">
+<img src="logo.png" class="logo-img">
+<div class="shop-name">Kamti Bangles Collection</div>
+</div>
+
+<nav>
+<a href="#collection">Collection</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search...">
+<button onclick="searchItems()">Search</button>
+</div>
+
+</header>
+
+<section class="hero">
+<h1>Kamti Bangles Collection</h1>
+<p>Bridal • Traditional • Party Wear</p>
+</section>
+
+<section class="section" id="collection">
+<h2>Bangles</h2>
+<div class="grid" id="bangleGrid"></div>
+</section>
+
+<section class="section">
+<h2>Jhumka's</h2>
+<div class="grid" id="jhumkaGrid"></div>
+</section>
+
+
+<section class="section" id="about">
+<h2>About Us</h2>
+<div class="about-box">
+Welcome to our Bangles Store, where elegance meets tradition.  
+We offer premium quality bangles crafted for weddings, festivals, and daily wear.  
+Every design reflects beauty, culture, and modern style.  
+
+Our goal is to provide stylish, affordable, and high-quality bangles that enhance your personality and complete your look.
+
+<br><br>
+<b>Owner:</b> Sanjay Kamti
+</div>
+</section>
+<section class="section" id="contact">
+<h2>Contact Info</h2>
+
+<p><b>Owner:</b> <span class="pink">Sanjay Kamti</span></p>
+
+<p><b>📞 Phone:</b> <span class="pink">8240406767</span></p>
+
+<p><b>💬 WhatsApp:</b> 
+<a href="https://wa.me/8240406767" target="_blank" class="pink">
+Chat Now
+</a>
+</p>
+
+<p><b>📸 Instagram:</b> 
+<a href="https://instagram.com/sanajy_kumar_kamti" target="_blank" class="pink">
+@sanajy_kumar_kamti
+</a>
+</p>
+
+<p><b>📧 Email:</b> 
+<a href="mailto:yourgmail@gmail.com" class="pink">
+yourgmail@gmail.com
+</a>
+</p>
+
+<p><b>📍 Address:</b> 
+<span class="pink">
+Habibhouar, Pachwari-Tola</span>
+</p>
+</section>
+
+<footer>
+© 2026 Bangles Store
+</footer>
+
+<script>
+
+let bangles = [
+{name:"Bridal Red Set", img:"b1.webp"},
+{name:"Golden Designer Bangles", img:"b2.webp"},
+{name:"Colorful Glass Bangles", img:"b3.jpg"},
+{name:"Traditional Green Set", img:"b4.jpg"},
+{name:"Pink Wedding Bangles", img:"b5.webp"},
+{name:"Pink Wedding Bangles", img:"b6.jpeg"},
+{name:"Pink Wedding Bangles", img:"b7.webp"},
+{name:"Pink Wedding Bangles", img:"b8.jpg"},
+{name:"Pink Wedding Bangles", img:"b9.jpg"},
+{name:"Pink Wedding Bangles", img:"b10.webp"},
+{name:"Pink Wedding Bangles", img:"b11.webp"},
+{name:"Pink Wedding Bangles", img:"b12.jpg"},
+{name:"Pink Wedding Bangles", img:"b13.webp"},
+{name:"Pink Wedding Bangles", img:"b14.webp"},
+{name:"Pink Wedding Bangles", img:"b15.webp"},
+{name:"Pink Wedding Bangles", img:"b16.webp"},
+{name:"Pink Wedding Bangles", img:"b17.webp"},
+{name:"Pink Wedding Bangles", img:"b18.webp"},
+{name:"Pink Wedding Bangles", img:"b19.jpg"},
+{name:"Pink Wedding Bangles", img:"b20.webp"},
+{name:"Pink Wedding Bangles", img:"b21.webp"},
+{name:"Pink Wedding Bangles", img:"b22.jpg"},
+{name:"Pink Wedding Bangles", img:"b23.png"},
+{name:"Pink Wedding Bangles", img:"b24.jpg"},
+{name:"Pink Wedding Bangles", img:"b25.jpg"},
+{name:"Pink Wedding Bangles", img:"b26.jpg"},
+{name:"Pink Wedding Bangles", img:"b27.jpg"},
+{name:"Pink Wedding Bangles", img:"b28.jpg"},
+{name:"Pink Wedding Bangles", img:"b29.jpg"},
+{name:"Pink Wedding Bangles", img:"b30.jpg"},
+{name:"Pink Wedding Bangles", img:"b31.jpg"},
+{name:"Pink Wedding Bangles", img:"b32.webp"},
+{name:"Pink Wedding Bangles", img:"b33.webp"},
+{name:"Pink Wedding Bangles", img:"b34.webp"},
+{name:"Pink Wedding Bangles", img:"b35.jpg"},
+{name:"Pink Wedding Bangles", img:"b36.jpg"},
+{name:"Pink Wedding Bangles", img:"b37.png"},
+{name:"Pink Wedding Bangles", img:"b38.png"},
+{name:"Pink Wedding Bangles", img:"b39.png"},
+{name:"Pink Wedding Bangles", img:"b40.jpg"},
+{name:"Pink Wedding Bangles", img:"b41.jpg"},
+{name:"Pink Wedding Bangles", img:"b42.jpg"},
+{name:"Pink Wedding Bangles", img:"b43.jpg"},
+{name:"Pink Wedding Bangles", img:"b44.jpg"},
+{name:"Pink Wedding Bangles", img:"b45.jpg"},
+{name:"Pink Wedding Bangles", img:"b46.jpg"},
+{name:"Pink Wedding Bangles", img:"b47.jpg"},
+{name:"Pink Wedding Bangles", img:"b48.webp"},
+{name:"Pink Wedding Bangles", img:"b49.jpg"},
+{name:"Pink Wedding Bangles", img:"b50.webp"},
+];
+
+let jhumkas = [
+
+];
+
+function shuffleArray(array){
+for(let i=array.length-1;i>0;i--){
+let j=Math.floor(Math.random()*(i+1));
+[array[i],array[j]]=[array[j],array[i]];
+}
+}
+
+function renderProducts(products, containerId){
+let container=document.getElementById(containerId);
+container.innerHTML="";
+products.forEach(product=>{
+container.innerHTML+=`
+<div class="card">
+<img src="${product.img}">
+<h4>${product.name}</h4>
+</div>
+`;
+});
+}
+
+function searchItems(){
+let input=document.getElementById("searchInput").value.toLowerCase();
+let cards=document.querySelectorAll(".card");
+cards.forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(input)?"block":"none";
+});
+}
+
+shuffleArray(bangles);
+shuffleArray(jhumkas);
+
+renderProducts(bangles,"bangleGrid");
+renderProducts(jhumkas,"jhumkaGrid");
+
+</script>
+
+</body>
+</html>
