@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bangles Store</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
@@ -268,9 +269,9 @@ padding:50px 15px;
 <section class="section" id="about">
 <h2>About Us</h2>
 <div class="about-box">
-Welcome to our Bangles Store, where elegance meets tradition.  
-We offer premium quality bangles crafted for weddings, festivals, and daily wear.  
-Every design reflects beauty, culture, and modern style.  
+Welcome to our Bangles Store, where elegance meets tradition.  
+We offer premium quality bangles crafted for weddings, festivals, and daily wear.  
+Every design reflects beauty, culture, and modern style.  
 <br><br>
 <b>Owner:</b> Sanjay Kamti
 </div>
@@ -362,6 +363,80 @@ let bangles = [
 {name:"Pink Wedding Bangles", img:"b50.webp"},
 ];
 
+let jhumkas = [
+{name:"Jhumka", img:"j1.webp"},
+{name:"Jhumka", img:"j2.jpg"},
+{name:"Jhumka", img:"j3.webp"},
+{name:"Jhumka", img:"j4.webp"},
+{name:"Jhumka", img:"j5.webp"},
+{name:"Jhumka", img:"j6.webp"},
+{name:"Jhumka", img:"j7.webp"},
+{name:"Pink Wedding Bangles", img:"j8.webp"},
+{name:"Pink Wedding Bangles", img:"j9.jpg"},
+{name:"Pink Wedding Bangles", img:"j10.webp"},
+{name:"Pink Wedding Bangles", img:"j11.webp"},
+{name:"Pink Wedding Bangles", img:"j12.jpg"},
+{name:"Pink Wedding Bangles", img:"j13.jpg"},
+{name:"Pink Wedding Bangles", img:"j14.webp"},
+{name:"Pink Wedding Bangles", img:"j15.webp"},
+{name:"Pink Wedding Bangles", img:"j16.avif"},
+{name:"Pink Wedding Bangles", img:"j17.webp"},
+{name:"Pink Wedding Bangles", img:"j18.webp"},
+{name:"Pink Wedding Bangles", img:"j19.jpg"},
+{name:"Pink Wedding Bangles", img:"j20.webp"},
+{name:"Pink Wedding Bangles", img:"j21.webp"},
+{name:"Pink Wedding Bangles", img:"j22.jpg"},
+{name:"Pink Wedding Bangles", img:"j23.png"},
+{name:"Pink Wedding Bangles", img:"j24.webp"},
+{name:"Pink Wedding Bangles", img:"j25.webp"},
+{name:"Pink Wedding Bangles", img:"j26.webp"},
+{name:"Pink Wedding Bangles", img:"j27.jpg"},
+{name:"Pink Wedding Bangles", img:"j28.jpg"},
+{name:"Pink Wedding Bangles", img:"j29.png"},
+{name:"Pink Wedding Bangles", img:"j30.jpg"},
+{name:"Jhumka", img:"j31.webp"},
+{name:"Jhumka", img:"j32.jpg"},
+{name:"Jhumka", img:"j33.jpg"},
+{name:"Jhumka", img:"j34.jpg"},
+{name:"Jhumka", img:"j35.jpg"},
+{name:"Jhumka", img:"j36.jpg"},
+{name:"Jhumka", img:"j37.jpg"},
+{name:"Jhumka", img:"j38.jpg"},
+{name:"Jhumka", img:"j39.jpg"},
+{name:"Jhumka", img:"j40.jpg"},
+{name:"Jhumka", img:"j41.jpg"},
+{name:"Jhumka", img:"j42.jpg"},
+{name:"Jhumka", img:"j43.jpg"},
+{name:"Jhumka", img:"j44.jpg"},
+{name:"Jhumka", img:"j45.jpg"},
+{name:"Jhumka", img:"j46.jpg"},
+{name:"Jhumka", img:"j47.jpg"},
+{name:"Jhumka", img:"j48.jpg"},
+{name:"Jhumka", img:"j49.jpg"},
+{name:"Jhumka", img:"j50.jpg"},
+{name:"Jhumka", img:"j51.jpg"},
+{name:"Jhumka", img:"j52.jpg"},
+{name:"Jhumka", img:"j53.jpg"},
+{name:"Jhumka", img:"j54.jpg"},
+{name:"Jhumka", img:"j55.jpg"},
+{name:"Jhumka", img:"j56.jpg"},
+{name:"Jhumka", img:"j57.jpg"},
+{name:"Jhumka", img:"j58.jpg"},
+{name:"Jhumka", img:"j59.jpg"},
+{name:"Jhumka", img:"j60.jpg"},
+
+
+];
+
+// --- SHUFFLE LOGIC START ---
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+// --- SHUFFLE LOGIC END ---
+
 function renderProducts(products, containerId){
 let container=document.getElementById(containerId);
 container.innerHTML="";
@@ -375,11 +450,14 @@ container.innerHTML+=`
 });
 }
 
+// Dono list ko shuffle kar diya
+shuffleArray(bangles);
+shuffleArray(jhumkas);
+
 renderProducts(bangles,"bangleGrid");
+renderProducts(jhumkas,"jhumkaGrid");
 
 </script>
 
 </body>
 </html>
-
-
